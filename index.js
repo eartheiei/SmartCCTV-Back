@@ -46,13 +46,15 @@ app.post("/members/add", (req, res) => {
   var Name = req.body.Name;
 
   const INSERT_MEMBERS_QUERY = `INSERT INTO members (User_ID, Face, Name) VALUES('${User_ID}', '${Face}', '${Name}')`;
-  connection.query(INSERT_MEMBERS_QUERY, (err, results) => {
-    if (err) {
-      return res.send(err);
-    } else {
-      return res.send("Successfully added member");
-    }
-  });
+  if(User_ID && Name){
+    connection.query(INSERT_MEMBERS_QUERY, (err, results) => {
+      if (err) {
+        return res.send(err);
+      } else {
+        return res.send("Successfully added member");
+      }
+    });
+  }
 });
 
 app.listen(4000, () => {
