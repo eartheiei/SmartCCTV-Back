@@ -58,8 +58,11 @@ app.post("/members/add", (req, res) => {
 });
 
 var Users = require('./routes/Users')
-
 app.use('/users',Users)
+
+
+var Settings = require('./routes/Settings')
+app.use('/settings',Settings)
 
 app.listen(4000, () => {
   console.log("Listening on port 4000");
