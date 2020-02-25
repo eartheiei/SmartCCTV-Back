@@ -41,12 +41,12 @@ app.get("/members", (req, res) => {
 });
 
 app.post("/members/add", (req, res) => {
-  var User_ID = req.body.User_ID;
-  var Face = req.body.Face;
-  var Name = req.body.Name;
+  var user_id = req.body.User_ID;
+  var face = req.body.Face;
+  var name = req.body.Name;
 
-  const INSERT_MEMBERS_QUERY = `INSERT INTO members (User_ID, Face, Name) VALUES('${User_ID}', '${Face}', '${Name}')`;
-  if(User_ID && Name){
+  const INSERT_MEMBERS_QUERY = `INSERT INTO members (user_id, face, name) VALUES('${user_id}', '${face}', '${name}')`;
+  if(user_id && name){
     connection.query(INSERT_MEMBERS_QUERY, (err, results) => {
       if (err) {
         return res.send(err);
@@ -63,6 +63,13 @@ app.use('/users',Users)
 
 var Settings = require('./routes/Settings')
 app.use('/settings',Settings)
+
+
+var Blocks = require('./routes/Blocks')
+app.use('/blocks',Blocks)
+
+var Searchs = require("./routes/Searchs")
+app.use("/search",Searchs)
 
 app.listen(4000, () => {
   console.log("Listening on port 4000");
