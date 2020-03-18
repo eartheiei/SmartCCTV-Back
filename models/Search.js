@@ -25,10 +25,10 @@ module.exports = db.sequelize.define(
       type: Sequelize.STRING
     },
     date: {
-      type: Sequelize.DATE
+      type: Sequelize.STRING
     },
     time: {
-      type: Sequelize.DATE
+      type: Sequelize.STRING
     }
   },
   {
