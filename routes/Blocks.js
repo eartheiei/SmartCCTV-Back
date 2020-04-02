@@ -12,8 +12,11 @@ blocks.post("/add", (req, res) => {
     realRow: req.body.realRow,
     realColumn: req.body.realColumn,
     pixelRow: req.body.pixelRow,
-    pixelColumn: req.body.pixelColumn
+    pixelColumn: req.body.pixelColumn,
+    cam_id: req.body.cam_id
   };
+
+  console.log(req.body)
 
   Block.findOne({
     where: {

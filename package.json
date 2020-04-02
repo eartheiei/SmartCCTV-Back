@@ -17,12 +17,19 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.2",
+    "buffer": "^5.4.3",
     "cors": "^2.8.4",
     "express": "^4.16.3",
+    "fs": "^0.0.1-security",
+    "image-to-base64": "^2.0.1",
     "jsonwebtoken": "^7.4.2",
+    "multer": "^1.4.2",
     "mysql": "^2.14.1",
     "mysql2": "^1.6.1",
-    "sequelize": "^4.38.0"
+    "node-onvif": "^0.1.7",
+    "path": "^0.12.7",
+    "sequelize": "^4.38.0",
+    "time-counter": "^1.0.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.3"
