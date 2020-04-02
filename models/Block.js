@@ -26,6 +26,9 @@ module.exports = db.sequelize.define(
     },
     pixelColumn: {
       type: Sequelize.INTEGER
+    },
+    cam_id: {
+      type: Sequelize.INTEGER
     }
   },
   {

@@ -12,7 +12,7 @@ module.exports = db.sequelize.define(
     user_id: {
         type: Sequelize.STRING
     },
-    face: {
+    path: {
         type: Sequelize.STRING
     },
     name: {
