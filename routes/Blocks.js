@@ -13,48 +13,60 @@ blocks.post("/add", (req, res) => {
     realColumn: req.body.realColumn,
     pixelRow: req.body.pixelRow,
     pixelColumn: req.body.pixelColumn,
-    cam_id: req.body.cam_id
+    cam_id: req.body.cam_id,
+    block_num: req.body.block_num,
   };
-
-  console.log(req.body)
 
   Block.findOne({
     where: {
       area_name: req.body.area_name,
       realRow: req.body.realRow,
-      realColumn: req.body.realColumn
-    }
+      realColumn: req.body.realColumn,
+      cam_id: req.body.cam_id,
+    },
   })
-    .then(block => {
+    .then((block) => {
       if (!block) {
         Block.create(blockData)
-          .then(block => {
+          .then((block) => {
             res.json({
-              status: block.realRow + block.realColumn + " Registered!"
+              status: block.realRow + block.realColumn + " Registered!",
             });
           })
-          .catch(err => {
+          .catch((err) => {
             res.send("error: " + err);
           });
       } else {
         res.json({ error: "Block already exists" });
       }
     })
-    .catch(err => {
+    .catch((err) => {
       res.send("error: " + err);
     });
 });
 
 blocks.get("/all", (req, res) => {
   Block.findAll()
-    .then(blocks => {
+    .then((blocks) => {
       if (blocks) {
         res.send(blocks);
       }
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(400).json({ error: err });
     });
+});
+
+blocks.get("/check/block_num/:block_id", (req, res) => {
+  console.log('------------------------------test')
+  const block_id = req.params.block_id;
+  Block.findOne({
+    where: {
+      block_id: block_id,
+    },
+  }).then((result) => {
+    return res.send(result)
+  });
 });
 
 module.exports = blocks;

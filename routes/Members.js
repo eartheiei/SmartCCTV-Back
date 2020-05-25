@@ -114,4 +114,16 @@ members.get("/newMember", (req, res) => {
   } else return res.send(null);
 });
 
+members.post("/delete", (req,res) => {
+  const id = req.body.mem_id
+  Members.destroy({
+    where:{
+      mem_id: id
+    }
+  })
+  .then(
+    res.send('Success!')
+  )
+})
+
 module.exports = members;

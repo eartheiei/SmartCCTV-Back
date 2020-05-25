@@ -29,7 +29,19 @@ module.exports = db.sequelize.define(
     },
     time: {
       type: Sequelize.STRING
-    }
+    },
+    width: {
+      type: Sequelize.INTEGER
+    },
+    height: {
+      type: Sequelize.INTEGER
+    },
+    x: {
+      type: Sequelize.INTEGER
+    },
+    y: {
+      type: Sequelize.INTEGER
+    },
   },
   {
     timestamps: false

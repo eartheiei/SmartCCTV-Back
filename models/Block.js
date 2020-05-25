@@ -29,6 +29,9 @@ module.exports = db.sequelize.define(
     },
     cam_id: {
       type: Sequelize.INTEGER
+    },
+    block_num: {
+      type: Sequelize.INTEGER
     }
   },
   {
