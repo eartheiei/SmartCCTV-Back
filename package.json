@@ -29,7 +29,7 @@
     "mysql2": "^1.6.1",
     "node-onvif": "^0.1.7",
     "path": "^0.12.7",
-    "sequelize": "^4.38.0",
+    "sequelize": "^5.15.1",
     "time-counter": "^1.0.0"
   },
   "devDependencies": {
